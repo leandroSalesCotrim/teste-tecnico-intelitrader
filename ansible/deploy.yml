@@ -1,0 +1,15 @@
+- hosts: all
+  tasks:
+    - name: Criar o container da aplicação
+      docker_container:
+        name: dotnet-core-container
+        image: leandroSalesCotrim/docker-dotnet-core:latest
+        state: started
+
+    - name: Obter logs do container
+      command: docker logs dotnet-core-container
+      register: container_logs
+
+    - name: Mostrar logs do container
+      debug:
+        msg: "{{ container_logs.stdout }}"

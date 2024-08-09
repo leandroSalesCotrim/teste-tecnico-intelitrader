@@ -1,0 +1,23 @@
+- hosts: all
+  tasks:
+    - name: Construir a imagem Docker
+      docker_image:
+        path: ../docker-dotnet-core
+        name: leandroSalesCotrim/docker-dotnet-core
+        tag: latest
+        state: build
+      register: build_output
+      ignore_errors: yes
+
+    - name: Verificar se a imagem Docker foi criada
+      shell: docker images -q leandroSalesCotrim/docker-dotnet-core
+      register: image_id
+
+    - name: Falhar se a imagem não foi encontrada
+      fail:
+        msg: "A imagem Docker não foi encontrada após a construção."
+      when: image_id.stdout == "" 
+      
+    - name: Imagem Docker criada com sucesso
+      debug:
+        msg: "A imagem Docker foi construída e verificada com sucesso. ID da imagem: {{ image_id.stdout }}"
