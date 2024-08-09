@@ -1,1 +1,1 @@
-# teste-tecnico-intelitrader  teste
+# teste-tecnico-intelitrader
