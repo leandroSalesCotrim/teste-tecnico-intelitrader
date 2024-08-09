@@ -19,7 +19,7 @@
         name: leandroSalesCotrim/docker-dotnet-core
         tag: latest
         build:
-          path: /var/jenkins_home/workspace/teste/teste-tecnico-intelitrader/docker-dotnet-core
+          path: /var/jenkins_home/workspace/teste/docker-dotnet-core
         source: build
       register: build_output
       ignore_errors: yes
