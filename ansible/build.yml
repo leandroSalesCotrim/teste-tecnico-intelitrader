@@ -1,11 +1,25 @@
 - hosts: all
   tasks:
-    - name: Construir a imagem Docker
+    - name: teste
+      shell: pwd
+      register: teste
+    
+    - name: teste2
+      debug:
+        msg: "teste: {{ teste.stdout }}"
+    
+    - name: Remove image
       docker_image:
-        path: ../docker-dotnet-core
+        state: absent
         name: leandroSalesCotrim/docker-dotnet-core
         tag: latest
-        state: build
+
+    - name: Construir a imagem Docker
+      docker_image:
+        path: /var/jenkins_home/workspace/teste/teste-tecnico-intelitrader/docker-dotnet-core
+        name: leandroSalesCotrim/docker-dotnet-core
+        tag: latest
+        source: build
       register: build_output
       ignore_errors: yes
 
