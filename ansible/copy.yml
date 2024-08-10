@@ -1,0 +1,9 @@
+- hosts: localhost
+  tasks:
+    - name: Copiar o arquivo
+      copy:
+        src: /var/jenkins_home/workspace/teste/docker-dotnet-core
+        dest: /var/ansible/
+        owner: root
+        group: root
+        mode: '0644'
