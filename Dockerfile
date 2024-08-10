@@ -4,7 +4,9 @@ FROM jenkins/jenkins:lts
 # Instale o Ansible
 USER root
 RUN apt-get update && \
-    apt-get install -y ansible vim
+    apt-get install -y ansible vim sudo
+
+RUN echo 'jenkins ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/jenkins
 
 RUN chown -R jenkins:jenkins /var/jenkins_home/
 

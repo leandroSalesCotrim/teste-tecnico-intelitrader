@@ -9,14 +9,12 @@
         msg: "teste: {{ teste.stdout }}"
     
     - name: Remove image
-      become: yes
       docker_image:
         state: absent
         name: leandroSalesCotrim/docker-dotnet-core
         tag: latest
 
     - name: Construir a imagem Docker
-      become: yes
       docker_image:
         name: leandroSalesCotrim/docker-dotnet-core
         tag: latest

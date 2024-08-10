@@ -1,7 +1,6 @@
 - hosts: all
   tasks:
     - name: Criar o container da aplicação
-      become: yes
       docker_container:
         name: dotnet-core-container
         image: leandroSalesCotrim/docker-dotnet-core:latest
