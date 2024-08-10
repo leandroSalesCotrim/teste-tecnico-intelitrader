@@ -17,7 +17,7 @@
         tag: latest
         source: build
         build:
-          path: /var/ansible/docker-dotnet-core
+          path: /home/ansible/docker-dotnet-core
       register: build_output
       ignore_errors: yes
 
