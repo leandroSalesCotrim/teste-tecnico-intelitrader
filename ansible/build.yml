@@ -18,9 +18,9 @@
       docker_image:
         name: leandroSalesCotrim/docker-dotnet-core
         tag: latest
+        source: build
         build:
           path: /var/jenkins_home/workspace/teste/docker-dotnet-core
-        source: build
       register: build_output
       ignore_errors: yes
 

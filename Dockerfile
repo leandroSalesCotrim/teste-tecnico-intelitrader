@@ -4,7 +4,7 @@ FROM jenkins/jenkins:lts
 # Instale o Ansible
 USER root
 RUN apt-get update && \
-    apt-get install -y ansible
+    apt-get install -y ansible vim
 
 RUN chown -R jenkins:jenkins /var/jenkins_home/
 
