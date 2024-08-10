@@ -8,7 +8,7 @@
 
     - name: Copiar arquivos para o host destino
       copy:
-        src: /var/jenkins_home/workspace/teste/docker-dotnet-core
+        src: /var/jenkins_home/workspace/build-donet-image/docker-dotnet-core
         dest: /home/ansible/
 
     - name: Construir a imagem Docker
