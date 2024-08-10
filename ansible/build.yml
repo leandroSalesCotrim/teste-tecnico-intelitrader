@@ -1,18 +1,15 @@
 - hosts: all
   tasks:
-    - name: teste
-      shell: pwd
-      register: teste
-    
-    - name: teste2
-      debug:
-        msg: "teste: {{ teste.stdout }}"
-    
     - name: Remove image
       docker_image:
         state: absent
         name: leandroSalesCotrim/docker-dotnet-core
         tag: latest
+
+    - name: Copiar arquivos para o host destino
+      copy:
+        src: /var/jenkins_home/workspace/teste/docker-dotnet-core
+        dest: /var/ansible
 
     - name: Construir a imagem Docker
       docker_image:
@@ -20,7 +17,7 @@
         tag: latest
         source: build
         build:
-          path: /var/jenkins_home/workspace/teste/docker-dotnet-core
+          path: /var/ansible/docker-dotnet-core
       register: build_output
       ignore_errors: yes
 
