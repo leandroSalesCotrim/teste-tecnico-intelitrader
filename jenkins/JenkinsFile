@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build com ansible') {
+            steps {
+                script {
+                    sh 'sudo ansible-playbook -i /var/ansible/inventory /var/ansible/build.yml --private-key ~/.ssh/id_rsa'
+                }
+            }
+        }
+
+        stage('Deploy com ansible') {
+            when {
+                anyOf {
+                    branch 'main'
+                    branch 'master'
+                }
+            }
+            steps {
+                script {
+                    sh 'sudo ansible-playbook -i /var/ansible/inventory /var/ansible/deploy.yml --private-key ~/.ssh/id_rsa'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline finished'
+        }
+    }
+}
