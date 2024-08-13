@@ -2,6 +2,7 @@
   tasks:
     - name: Remove image
       docker_image:
+        force_absent: yes
         state: absent
         name: leandroSalesCotrim/docker-dotnet-core
         tag: latest
@@ -16,7 +17,7 @@
         name: leandroSalesCotrim/docker-dotnet-core
         tag: latest
         source: build
-        force: yes
+        force: yes  
         build:
           path: /home/ansible/docker-dotnet-core
       register: build_output
