@@ -17,7 +17,6 @@
         name: leandroSalesCotrim/docker-dotnet-core
         tag: latest
         source: build
-        force: yes  
         build:
           path: /home/ansible/docker-dotnet-core
       register: build_output
