@@ -1,13 +1,13 @@
 - hosts: all
   tasks:
-    - name: Remove image
+    - name: Remover imagem para nova contrução
       docker_image:
         force_absent: yes
         state: absent
         name: leandroSalesCotrim/docker-dotnet-core
         tag: latest
 
-    - name: Copiar arquivos para o host destino
+    - name: Copiar arquivos da aplicação para o host destino
       copy:
         src: /var/jenkins_home/workspace/build-donet-image/
         dest: /home/ansible/
