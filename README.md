@@ -138,3 +138,14 @@ Este teste avalia a capacidade do candidato em projetar, implementar e apresenta
 
     ![image](https://github.com/user-attachments/assets/3df9bd12-8bf8-4548-a268-a7eddb9366c8)
     ![image](https://github.com/user-attachments/assets/ca052a63-c49b-4027-9980-3cc46c033687)
+
+
+
+
+## Telas do projeto:
+![image](https://github.com/user-attachments/assets/f6af4c0c-631b-42e4-b454-371b8f2edcf2)
+![image](https://github.com/user-attachments/assets/d9a977c2-7c87-4d56-9c1b-76833c1f5937)
+![image](https://github.com/user-attachments/assets/7f7d427d-0710-4765-a834-d13e0099ca70)
+![image](https://github.com/user-attachments/assets/8eb97fd8-2ba5-4352-92b3-2747ac3fe590)
+
+
